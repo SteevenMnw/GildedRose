@@ -1,6 +1,6 @@
 com/guildedrose/entities/Item.java
  com.guildedrose.entities.Item
-com/guildedrose/App.java
- com.guildedrose.App
 com/guildedrose/repositories/GildedRose.java
  com.guildedrose.repositories.GildedRose
+com/guildedrose/App.java
+ com.guildedrose.App

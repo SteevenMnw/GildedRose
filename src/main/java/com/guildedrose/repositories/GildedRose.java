@@ -34,6 +34,9 @@ public class GildedRose {
         else if(number == 0){
             item.setQuality(0);
         }
+        else if(number == 50){
+            item.setQuality(50);
+        }
         else {
             item.setQuality(item.getQuality() + number);
         }

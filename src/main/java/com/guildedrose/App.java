@@ -8,7 +8,7 @@ public class App {
     public static void main(String[] args) {
         GildedRose gr = new GildedRose();
 
-        int day = 16;
+        int day = 25;
 
         Item item1 = new Item();
         item1.setNom("Aged Brie");
