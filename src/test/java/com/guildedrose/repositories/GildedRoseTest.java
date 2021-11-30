@@ -65,6 +65,7 @@ class GildedRoseTest {
     void modifyByNameSulfuras() {
         Item item = new Item();
         item.setNom("Sulfuras");
+        item.setLegendary(1);
         item.setSellin(0);
         item.setQuality(6);
 
@@ -72,7 +73,7 @@ class GildedRoseTest {
         gr.modifyByName(item);
 
         assertEquals(0,item.getSellin());
-        assertEquals(6,item.getQuality());
+        assertEquals(80,item.getQuality());
     }
 
     @org.junit.jupiter.api.Test
@@ -215,7 +216,7 @@ class GildedRoseTest {
         GildedRose gr = new GildedRose();
         gr.decreaseQuality(item);
 
-        assertEquals(6,item.getQuality());
+        assertEquals(80,item.getQuality());
     }
 
     @org.junit.jupiter.api.Test

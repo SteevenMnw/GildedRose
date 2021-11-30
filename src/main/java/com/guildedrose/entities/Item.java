@@ -1,11 +1,32 @@
 package com.guildedrose.entities;
 
-public class Item {
+import com.guildedrose.items.Conjured;
 
-    private String nom;
-    private int sellin;
-    private int quality;
-    private int legendary;
+public abstract class Item {
+
+    public Item (String nom, int sellin, int quality){
+        this.nom = nom;
+        this.sellin = sellin;
+        this.quality = quality;
+    }
+
+    protected String nom;
+    protected Integer sellin;
+    protected int quality;
+
+    protected void CellQualityToFifty(){
+        if(this.quality >= 50){
+            this.quality = 50;
+        }
+    }
+
+    protected void FloorQualityToZero(){
+        if(this.quality <= 0){
+            this.quality = 0;
+        }
+    }
+
+    public abstract void update();
 
     public String getNom() {
         return nom;
@@ -30,10 +51,6 @@ public class Item {
     public void setQuality(int quality) {
         this.quality = quality;
     }
-
-    public int getLegendary() {return legendary; }
-
-    public void setLegendary(int legendary) {this.legendary = legendary; }
 
     @Override
     public String toString() {

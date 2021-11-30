@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.guildedrose.repositories.GildedRoseTest" tests="18" skipped="0" failures="0" errors="0" timestamp="2021-11-30T13:02:37" hostname="DESKTOP-06AJV0F" time="0.04">
+<testsuite name="com.guildedrose.repositories.GildedRoseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-30T14:12:35" hostname="DESKTOP-06AJV0F" time="0.02">
   <properties/>
-  <testcase name="modifyByNameBackstagePassesSellInZero()" classname="com.guildedrose.repositories.GildedRoseTest" time="0.018"/>
-  <testcase name="modifyByNameBackstagePassesSellInInferiorFive()" classname="com.guildedrose.repositories.GildedRoseTest" time="0.0"/>
-  <testcase name="decreaseQualityNormalItemWithZeroSellIn()" classname="com.guildedrose.repositories.GildedRoseTest" time="0.001"/>
-  <testcase name="modifyByNameAgesBrie()" classname="com.guildedrose.repositories.GildedRoseTest" time="0.001"/>
-  <testcase name="modifyQualityZero()" classname="com.guildedrose.repositories.GildedRoseTest" time="0.001"/>
-  <testcase name="modifyByNameSulfuras()" classname="com.guildedrose.repositories.GildedRoseTest" time="0.0"/>
-  <testcase name="modifySellInZero()" classname="com.guildedrose.repositories.GildedRoseTest" time="0.0"/>
-  <testcase name="modifyByNameBackstagePassesSellInInferiorTen()" classname="com.guildedrose.repositories.GildedRoseTest" time="0.001"/>
-  <testcase name="modifyByNameAgesBrieSellInZero()" classname="com.guildedrose.repositories.GildedRoseTest" time="0.001"/>
-  <testcase name="modifySellInPositiveNumber()" classname="com.guildedrose.repositories.GildedRoseTest" time="0.001"/>
-  <testcase name="modifyQuantityPositive()" classname="com.guildedrose.repositories.GildedRoseTest" time="0.0"/>
-  <testcase name="modifyQuantityNegative()" classname="com.guildedrose.repositories.GildedRoseTest" time="0.0"/>
-  <testcase name="decreaseQualityNormalItem()" classname="com.guildedrose.repositories.GildedRoseTest" time="0.001"/>
-  <testcase name="modifyByNameBackstagePassesSellInSuperiorTen()" classname="com.guildedrose.repositories.GildedRoseTest" time="0.001"/>
-  <testcase name="decreaseQualityLegendaryItem()" classname="com.guildedrose.repositories.GildedRoseTest" time="0.001"/>
-  <testcase name="decreaseQualityNormalItemWithZeroQuality()" classname="com.guildedrose.repositories.GildedRoseTest" time="0.001"/>
-  <testcase name="decreaseQualityNormalItemWithSellIn()" classname="com.guildedrose.repositories.GildedRoseTest" time="0.0"/>
-  <testcase name="decreaseQualitySpecialItem()" classname="com.guildedrose.repositories.GildedRoseTest" time="0.0"/>
+  <testcase name="modifyByNameSulfuras()" classname="com.guildedrose.repositories.GildedRoseTest" time="0.02"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

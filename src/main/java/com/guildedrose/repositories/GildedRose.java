@@ -1,11 +1,10 @@
-package com.guildedrose.repositories;
+/*package com.guildedrose.repositories;
 
 import com.guildedrose.entities.Item;
 
 import java.util.Arrays;
 
 public class GildedRose {
-
 
     public void display(Item[] items) {
         for ( Item item : items) {
@@ -29,7 +28,7 @@ public class GildedRose {
 
     public void modifyQuality(Item item, int number){
         if(item.getLegendary() == 1){
-            item.setQuality(item.getQuality());
+            item.setQuality(80);
         }
         else if(number == 0){
             item.setQuality(0);
@@ -80,6 +79,9 @@ public class GildedRose {
                 modifyQuality(item, 0);
             }
         }
+        if(item.getLegendary() == 1){
+            modifyQuality(item,1);
+        }
     }
 
     public void decreaseQuality(Item item){
@@ -101,5 +103,9 @@ public class GildedRose {
                 }
             }
         }
+        else if (item.getLegendary() == 1){
+            modifyQuality(item, 1);
+        }
     }
 }
+*/

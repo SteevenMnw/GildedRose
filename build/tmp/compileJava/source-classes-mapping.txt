@@ -1,6 +1,14 @@
 com/guildedrose/entities/Item.java
  com.guildedrose.entities.Item
-com/guildedrose/repositories/GildedRose.java
- com.guildedrose.repositories.GildedRose
+com/guildedrose/items/Aged.java
+ com.guildedrose.items.Aged
+com/guildedrose/items/Legendary.java
+ com.guildedrose.items.Legendary
+com/guildedrose/items/Conjured.java
+ com.guildedrose.items.Conjured
+com/guildedrose/items/Generic.java
+ com.guildedrose.items.Generic
+com/guildedrose/items/Event.java
+ com.guildedrose.items.Event
 com/guildedrose/App.java
  com.guildedrose.App
