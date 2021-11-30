@@ -1,0 +1,4 @@
+com/guildedrose/TexttestFixture.java
+ com.guildedrose.TexttestFixture
+com/guildedrose/repositories/GildedRoseTest.java
+ com.guildedrose.repositories.GildedRoseTest
