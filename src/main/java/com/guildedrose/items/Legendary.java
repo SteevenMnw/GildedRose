@@ -10,6 +10,7 @@ public class Legendary extends Item {
 
     @Override
     public void update() {
+        this.sellin --;
         this.quality = 80;
     }
 

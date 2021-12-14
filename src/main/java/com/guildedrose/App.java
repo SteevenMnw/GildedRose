@@ -5,13 +5,17 @@ import com.guildedrose.items.Conjured;
 import com.guildedrose.items.Event;
 import com.guildedrose.items.Generic;
 import com.guildedrose.items.Legendary;
+import com.guildedrose.repositories.InMemoryRepository;
+
+import java.io.IOException;
+import java.util.ArrayList;
 /*import com.guildedrose.repositories.GildedRose;*/
 
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        int day = 1;
+        /*int day = 1;
 
         Item item1 = new Conjured("Conjured Item",5,5);
 
@@ -35,8 +39,17 @@ public class App {
             else {
                 System.out.println(item);
             }
-        }
+        }*/
 
+        Shop shop = new Shop(new InMemoryRepository());
+        shop.UpdateQuality(3);
+
+        /*TestBufferedWriter writer = new TestBufferedWriter("inventory.txt");
+        writer.traitement("test");*/
+
+        /*TestBufferedReader read = new TestBufferedReader("inventory.txt");
+        ArrayList test = read.lecture();
+        System.out.println(test.get(0));*/
     }
 
 }

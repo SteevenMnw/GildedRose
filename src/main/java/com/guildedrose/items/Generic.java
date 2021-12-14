@@ -12,11 +12,14 @@ public class Generic extends Item {
     public void update() {
         this.sellin --;
 
-        if(this.sellin >= 0){
+        if(this.sellin > 0){
             this.quality --;
         }
         else{
             this.quality -= 2;
         }
+
+        this.CellQualityToFifty();
+        this.FloorQualityToZero();
     }
 }

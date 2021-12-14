@@ -1,4 +1,6 @@
 com/guildedrose/TexttestFixture.java
  com.guildedrose.TexttestFixture
-com/guildedrose/repositories/GildedRoseTest.java
- com.guildedrose.repositories.GildedRoseTest
+com/guildedrose/items/AgedTest.java
+ com.guildedrose.items.AgedTest
+com/guildedrose/TestItem/TestItems.java
+ com.guildedrose.TestItem.TestItems

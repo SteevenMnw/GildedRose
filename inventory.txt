@@ -1,0 +1,5 @@
+Aged,Aged Item,12,10
+Conjured,Conjured Item,5,16
+Legendary,Sulfuras,-3,80
+Generic,Item normal,12,30
+Event,Backstage passes,20,7
