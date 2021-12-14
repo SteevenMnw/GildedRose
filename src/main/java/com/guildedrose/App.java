@@ -1,7 +1,11 @@
 package com.guildedrose;
 
+import com.guildedrose.inventoryInteractor.InventoryViewer;
+import com.guildedrose.items.Item;
 import com.guildedrose.repositories.FileItemsRepository;
 import com.guildedrose.inventoryInteractor.Shop;
+
+import java.util.ArrayList;
 
 public class App {
 
@@ -14,11 +18,12 @@ public class App {
         System.out.println("- Mettre à jour l'inventaire ? -tape '3'");
         String s = System.console().readLine("que veux-tu : ");
 
+        InventoryViewer viewer = new Shop(new FileItemsRepository());
+        ArrayList<Item> items = viewer.GetInventory();
 
-        Shop shop = new Shop(new FileItemsRepository());
-        shop.UpdateQuality();
-
-
+        for(Item item: items){
+            System.out.println(item.getNom());
+        }
     }
 
 }
