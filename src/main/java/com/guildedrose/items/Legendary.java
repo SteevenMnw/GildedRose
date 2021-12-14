@@ -2,8 +2,8 @@ package com.guildedrose.items;
 
 public class Legendary extends Item {
 
-    public Legendary(String nom, int sellin, int quality) {
-        super(nom, sellin, quality);
+    public Legendary(int id, String nom, int sellin, int quality, int price) {
+        super(id, nom, sellin, quality, price);
     }
 
     @Override

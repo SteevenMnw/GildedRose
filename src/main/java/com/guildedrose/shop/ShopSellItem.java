@@ -4,6 +4,6 @@ import com.guildedrose.items.Item;
 
 public interface ShopSellItem {
 
-    void SellItemFromInventory(Item item);
+    void SellItemFromInventory(int index);
 
 }

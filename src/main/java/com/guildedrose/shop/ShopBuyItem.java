@@ -1,7 +1,5 @@
 package com.guildedrose.shop;
 
-import com.guildedrose.items.Item;
-
 public interface ShopBuyItem {
-    void BuyItemFromInventory(Item item);
+    void BuyItemFromInventory(String typeItem, String name, int sellin, int quality, int price);
 }

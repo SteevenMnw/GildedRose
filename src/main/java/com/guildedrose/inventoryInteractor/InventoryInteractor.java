@@ -5,9 +5,9 @@ import com.guildedrose.items.Item;
 import java.util.ArrayList;
 
 public class InventoryInteractor implements InventoryUpdater, InventoryViewer {
-    private ItemsRepository repository;
+    private InventoryRepository repository;
 
-    public InventoryInteractor(ItemsRepository repository){
+    public InventoryInteractor(InventoryRepository repository){
         this.repository = repository;
     }
 

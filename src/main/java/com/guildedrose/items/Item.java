@@ -2,15 +2,35 @@ package com.guildedrose.items;
 
 public abstract class Item {
 
-    public Item (String nom, int sellin, int quality){
+    public Item (int id, String nom, int sellin, int quality, int price){
+        this.id = id;
         this.nom = nom;
         this.sellin = sellin;
         this.quality = quality;
+        this.price = price;
     }
 
+    protected int id;
     protected String nom;
     protected Integer sellin;
     protected int quality;
+    protected int price;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
 
     protected void CellQualityToFifty(){
         if(this.quality >= 50){
@@ -52,7 +72,7 @@ public abstract class Item {
 
     @Override
     public String toString() {
-        return nom +','+ sellin +',' + quality;
+        return nom +','+ sellin +',' + quality+','+price;
     }
 
     public String toStringLeg() {

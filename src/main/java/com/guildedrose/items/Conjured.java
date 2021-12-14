@@ -2,8 +2,8 @@ package com.guildedrose.items;
 
 public class Conjured extends Item {
 
-    public Conjured(String nom, int sellin, int quality) {
-        super(nom, sellin, quality);
+    public Conjured(int id, String nom, int sellin, int quality, int price) {
+        super(id, nom, sellin, quality, price);
     }
 
     @Override
