@@ -52,11 +52,7 @@ public abstract class Item {
 
     @Override
     public String toString() {
-        return "Item{" +
-                "nom='" + nom + '\'' +
-                ", sellin=" + sellin +
-                ", quality=" + quality +
-                '}';
+        return nom +','+ sellin +',' + quality;
     }
 
     public String toStringLeg() {
