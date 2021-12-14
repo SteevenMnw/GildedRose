@@ -1,7 +1,5 @@
 package com.guildedrose.entities;
 
-import com.guildedrose.items.Conjured;
-
 public abstract class Item {
 
     public Item (String nom, int sellin, int quality){

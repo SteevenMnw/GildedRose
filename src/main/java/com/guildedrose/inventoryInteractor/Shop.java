@@ -5,7 +5,7 @@ import com.guildedrose.repositories.ItemsRepository;
 
 import java.util.ArrayList;
 
-public class Shop implements InventoryUpdater, InventoryVewer{
+public class Shop implements InventoryUpdater, InventoryViewer {
     private ItemsRepository repository;
 
     public Shop(ItemsRepository repository){

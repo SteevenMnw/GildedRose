@@ -3,3 +3,4 @@ Conjured,Conjured Item,4,14
 Legendary,Sulfuras,-4,80
 Generic,Item normal,11,29
 Event,Backstage passes,19,8
+Event,Backstage passes,19,8
