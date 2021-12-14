@@ -1,6 +1,6 @@
 package com.guildedrose.TestItem;
 
-import com.guildedrose.entities.Item;
+import com.guildedrose.items.Item;
 import com.guildedrose.items.*;
 
 import org.junit.jupiter.api.Test;

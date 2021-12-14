@@ -1,6 +1,6 @@
 package com.guildedrose.inventoryInteractor;
 
-import com.guildedrose.entities.Item;
+import com.guildedrose.items.Item;
 import com.guildedrose.repositories.ItemsRepository;
 
 import java.util.ArrayList;

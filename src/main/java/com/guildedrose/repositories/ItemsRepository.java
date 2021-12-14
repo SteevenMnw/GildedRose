@@ -1,6 +1,6 @@
 package com.guildedrose.repositories;
 
-import com.guildedrose.entities.Item;
+import com.guildedrose.items.Item;
 
 import java.util.ArrayList;
 

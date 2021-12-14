@@ -1,7 +1,5 @@
 package com.guildedrose.items;
 
-import com.guildedrose.entities.Item;
-
 public class Conjured extends Item {
 
     public Conjured(String nom, int sellin, int quality) {

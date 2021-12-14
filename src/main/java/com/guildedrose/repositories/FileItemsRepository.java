@@ -1,7 +1,7 @@
 package com.guildedrose.repositories;
 
 import com.guildedrose.fileInteractor.InventoryRead;
-import com.guildedrose.entities.Item;
+import com.guildedrose.items.Item;
 import com.guildedrose.items.*;
 
 import java.io.*;

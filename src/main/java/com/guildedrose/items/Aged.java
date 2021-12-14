@@ -1,7 +1,5 @@
 package com.guildedrose.items;
 
-import com.guildedrose.entities.Item;
-
 public class Aged extends Item {
 
     public Aged(String nom, int sellin, int quality) {

@@ -1,7 +1,5 @@
 package com.guildedrose.items;
 
-import com.guildedrose.entities.Item;
-
 public class Legendary extends Item {
 
     public Legendary(String nom, int sellin, int quality) {

@@ -1,7 +1,5 @@
 package com.guildedrose.items;
 
-import com.guildedrose.entities.Item;
-
 public class Event extends Item {
 
     public Event(String nom, int sellin, int quality) {

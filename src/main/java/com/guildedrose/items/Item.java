@@ -1,4 +1,4 @@
-package com.guildedrose.entities;
+package com.guildedrose.items;
 
 import com.guildedrose.items.Conjured;
 

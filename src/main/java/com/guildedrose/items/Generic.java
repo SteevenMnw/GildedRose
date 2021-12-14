@@ -1,7 +1,5 @@
 package com.guildedrose.items;
 
-import com.guildedrose.entities.Item;
-
 public class Generic extends Item {
 
     public Generic(String nom, int sellin, int quality) {
