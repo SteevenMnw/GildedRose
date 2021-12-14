@@ -38,7 +38,6 @@ public class FileItemsRepository implements InventoryRepository {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println(items.toString());
         return items;
     }
 

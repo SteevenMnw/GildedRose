@@ -1,6 +1,6 @@
-Aged,Aged Item,10,12
-Conjured,Conjured Item,3,12
-Legendary,Sulfuras,-5,80
-Generic,Item normal,10,28
-Event,Backstage passes,18,9
-Event,Backstage passes,18,9
+1,AgedItem,Aged Brie,-2,12,10
+3,EventItem,Backstage passes,3,17,20
+4,GenericItem,Item normal,0,1,5
+6,AgedItem,Aged Brie,14,3,1
+7,LegendaryItem,Legenday Sword,20,50,1000
+8,GenericItem,TestGeneric,10,3,20
