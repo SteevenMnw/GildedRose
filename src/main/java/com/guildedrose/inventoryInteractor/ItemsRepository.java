@@ -1,4 +1,4 @@
-package com.guildedrose.repositories;
+package com.guildedrose.inventoryInteractor;
 
 import com.guildedrose.items.Item;
 

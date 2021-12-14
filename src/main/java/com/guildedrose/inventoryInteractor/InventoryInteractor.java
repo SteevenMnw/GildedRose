@@ -1,14 +1,13 @@
 package com.guildedrose.inventoryInteractor;
 
 import com.guildedrose.items.Item;
-import com.guildedrose.repositories.ItemsRepository;
 
 import java.util.ArrayList;
 
-public class Shop implements InventoryUpdater, InventoryViewer {
+public class InventoryInteractor implements InventoryUpdater, InventoryViewer {
     private ItemsRepository repository;
 
-    public Shop(ItemsRepository repository){
+    public InventoryInteractor(ItemsRepository repository){
         this.repository = repository;
     }
 

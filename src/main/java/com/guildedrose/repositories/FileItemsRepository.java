@@ -1,5 +1,6 @@
 package com.guildedrose.repositories;
 
+import com.guildedrose.inventoryInteractor.ItemsRepository;
 import com.guildedrose.items.Item;
 import com.guildedrose.items.*;
 import java.io.*;
