@@ -6,14 +6,14 @@ import java.io.*;
 public class FileBalanceRepository implements BalanceRepository {
     @Override
     public int GetBalance() {
-        String x = "";
+        String line = "";
         try {
             BufferedReader read = new BufferedReader(new FileReader("balance.txt"));
-            x = read.readLine();
-        }catch (Exception e) {
+            line = read.readLine();
+        }catch (IOException e) {
             e.printStackTrace();
         }
-        return Integer.parseInt(x);
+        return Integer.parseInt(line);
     }
 
     @Override
@@ -21,12 +21,9 @@ public class FileBalanceRepository implements BalanceRepository {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("balance.txt"));
             writer.write(String.format("%d", balance));
-
             writer.close();
         }catch (Exception e){
             e.printStackTrace();
         }
-
-
     }
 }

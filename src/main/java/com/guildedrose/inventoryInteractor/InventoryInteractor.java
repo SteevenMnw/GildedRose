@@ -1,30 +1,27 @@
 package com.guildedrose.inventoryInteractor;
 
 import com.guildedrose.items.Item;
-
 import java.util.ArrayList;
 
 public class InventoryInteractor implements InventoryUpdater, InventoryViewer {
-    private InventoryRepository repository;
+    private InventoryRepository inventoryRepository;
 
-    public InventoryInteractor(InventoryRepository repository){
-        this.repository = repository;
+    public InventoryInteractor(InventoryRepository inventoryRepository){
+        this.inventoryRepository = inventoryRepository;
     }
 
     @Override
     public void UpdateQuality() {
-        ArrayList<Item> items = repository.getInventory();
-
+        ArrayList<Item> items = this.inventoryRepository.GetInventoryRepository();
         for(Item item : items){
             item.update();
         }
-
-        repository.saveInventory(items);
+        this.inventoryRepository.SaveInventoryRepository(items);
     }
 
     @Override
-    public ArrayList<Item> GetInventory(){
-        return repository.getInventory();
+    public ArrayList<Item> GetInventoryViewer() {
+        return inventoryRepository.GetInventoryRepository();
     }
 
     @Override

@@ -9,14 +9,15 @@ import java.util.ArrayList;
 public class FileItemsRepository implements InventoryRepository {
 
     ArrayList<Item> items = new ArrayList<>();
+    public FileItemsRepository(){}
 
     @Override
-    public ArrayList<Item> getInventory() {
-        String x = "";
+    public ArrayList<Item> GetInventoryRepository() {
+        String line = "";
         try {
             BufferedReader read = new BufferedReader(new FileReader("inventory.txt"));
-            while((x = read.readLine()) != null){
-                String[] item = x.split(",");
+            while((line = read.readLine()) != null){
+                String[] item = line.split(",");
                 switch (item[1]){
                     case "Aged":
                         items.add(new Aged(Integer.parseInt(item[0]),item[2], Integer.parseInt(item[3]), Integer.parseInt(item[4]), Integer.parseInt(item[5])));
@@ -42,16 +43,14 @@ public class FileItemsRepository implements InventoryRepository {
     }
 
     @Override
-    public void saveInventory(ArrayList<Item> items) {
+    public void SaveInventoryRepository(ArrayList<Item> items) {
         try {
-            BufferedWriter fichier = new BufferedWriter(new FileWriter("inventory.txt"));
-
+            BufferedWriter writer = new BufferedWriter(new FileWriter("inventory.txt"));
             for (Item item: items){
-                fichier.write(String.format("%s,%d,%s,%s,%s,%s",item.getClass().getSimpleName(),item.getId(), item.getNom(), item.getSellin(), item.getQuality(), item.getPrice()));
-                fichier.newLine();
+                writer.write(String.format("%d,%s,%s,%d,%d,%d",item.getId(), item.getClass().getSimpleName(), item.getName(), item.getSellin(), item.getQuality(), item.getPrice()));
+                writer.newLine();
             }
-
-            fichier.close();
+            writer.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

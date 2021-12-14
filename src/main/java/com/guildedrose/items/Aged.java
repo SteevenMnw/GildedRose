@@ -2,8 +2,12 @@ package com.guildedrose.items;
 
 public class Aged extends Item {
 
-    public Aged(int id, String nom, int sellin, int quality, int price) {
-        super(id, nom, sellin, quality, price);
+    public Aged(String name, int sellin, int quality, int price) {
+        super(name, sellin, quality, price);
+    }
+
+    public Aged(int id, String name, int sellin, int quality, int value) {
+        super(id, name, sellin, quality, value);
     }
 
     @Override

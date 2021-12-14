@@ -11,20 +11,20 @@ public class InMemoryRepository implements InventoryRepository {
     ArrayList<Item> items = new ArrayList<>();
 
     public InMemoryRepository(){
-        items.add(new Aged(0,"Aged Item",15,7, 8000));
-        items.add(new Conjured(1,"Conjured Item",8,22, 5000));
-        items.add(new Legendary(2,"Sulfuras",0,10, 1000));
-        items.add(new Generic(3,"Item normal",15,33, 10000));
-        items.add(new Event(4,"Backstage passes",23,4,15000));
+        items.add(new Aged(1,"Aged Item",15,7, 8000));
+        items.add(new Conjured(2,"Conjured Item",8,22, 5000));
+        items.add(new Legendary(3,"Sulfuras",0,10, 1000));
+        items.add(new Generic(4,"Item normal",15,33, 10000));
+        items.add(new Event(5,"Backstage passes",23,4,15000));
     }
 
     @Override
-    public ArrayList<Item> getInventory() {
+    public ArrayList<Item> GetInventoryRepository() {
         return items;
     }
 
     @Override
-    public void saveInventory(ArrayList<Item> items) {
+    public void SaveInventoryRepository(ArrayList<Item> items) {
         this.items = items;
     }
 }

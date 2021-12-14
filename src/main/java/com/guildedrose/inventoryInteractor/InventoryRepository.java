@@ -5,7 +5,7 @@ import com.guildedrose.items.Item;
 import java.util.ArrayList;
 
 public interface InventoryRepository {
-    ArrayList<Item> getInventory();
+    ArrayList<Item> GetInventoryRepository();
 
-    void saveInventory(ArrayList<Item> items);
+    void SaveInventoryRepository(ArrayList<Item> items);
 }

@@ -5,22 +5,18 @@ import com.guildedrose.inventoryInteractor.*;
 import com.guildedrose.items.*;
 import com.guildedrose.repositories.*;
 import com.guildedrose.shop.*;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
-        int choice = 0;
+        String choice = "";
         ArrayList<Item> items = new ArrayList<>();
         Scanner input = new Scanner(System.in);
         Scanner inputString = new Scanner(System.in);
-        Scanner scanner = new Scanner(System.in);
         Scanner sc = new Scanner(System.in);
-        Scanner scString = new Scanner(System.in);
         do {
             System.out.println("========== Gilded Rose ==========");
             System.out.println("\tPour quitter :'0'");
@@ -31,31 +27,28 @@ public class App {
             System.out.println("\tVendre un objet : '5'");
             System.out.println("\tAfficher le solde du magasin : '6'");
             System.out.print("Que veux-tu ?  ");
-            choice = input.nextInt();
+            choice = input.nextLine();
             System.out.println();
             switch (choice) {
-                case 0:
+                case "0":
                     System.exit(0);
-                case 1:
+                case "1":
                     System.out.println("===== Inventaire =====\n");
                     DisplayInventoryCommand();
-                    input.next();
                     break;
-                case 2:
+                case "2":
                     System.out.println("===== Inventaire (par quantité) =====");
                     DisplayInventoryByCountCommand();
-                    input.next();
                     break;
-                case 3:
+                case "3":
                     System.out.println("===== Mise à jour de l'inventaire =====");
                     UpdateInventoryCommand();
-                    input.next();
                     break;
-                case 4:
+                case "4":
                     System.out.println("===== Achat d'un objet =====");
                     System.out.println("1.Aged\n2.Legendary\n3.Event\n4.Generic\n5.Conjured");
                     System.out.print("Selectionner le type d'objet à acheter : ");
-                    int typeItem = input.nextInt();
+                    String typeItem = input.nextLine();
                     System.out.print("Indiquez le nom de l'objet à acheter : ");
                     String nameItem = inputString.nextLine();
                     System.out.print("Indiquez le sellin de l'objet à acheter : ");
@@ -65,48 +58,47 @@ public class App {
                     System.out.print("Indiquez le prix de l'objet à acheter : ");
                     int valueItem = input.nextInt();
                     switch (typeItem) {
-                        case 1:
+                        case "1":
                             BuyItemCommand("Aged", nameItem, sellinItem, qualityItem, valueItem);
                             break;
-                        case 2:
+                        case "2":
                             BuyItemCommand("Legendary", nameItem, sellinItem, qualityItem, valueItem);
                             break;
-                        case 3:
+                        case "3":
                             BuyItemCommand("Event", nameItem, sellinItem, qualityItem, valueItem);
                             break;
-                        case 4:
+                        case "4":
                             BuyItemCommand("Generic", nameItem, sellinItem, qualityItem, valueItem);
                             break;
-                        case 5:
+                        case "5":
                             BuyItemCommand("Conjured", nameItem, sellinItem, qualityItem, valueItem);
                             break;
-                        default:
-                            System.out.println("Fait un effort !");
-                            break;
+                        default :
+                            throw new IllegalArgumentException ("Expression Invalide");
                     }
-                    System.out.println("========================================");
-                    input.next();
+                    System.out.println();
                     break;
-                case 5:
+                case "5":
                     System.out.println("===== Vendre un objet =====");
+                    System.out.println("Saisir l'id de l'objet à vendre");
                     int idItem = sc.nextInt();
                     SellItemCommand(idItem);
                     System.out.println();
-                    input.next();
                     break;
-                case 6:
+                case "6":
                     System.out.println("===== Solde du magasin =====");
+                    DisplayBalanceCommand();
+                    System.out.println();
 
-                default:
-                    System.out.println("Fait un effort !");
-                    break;
+                default :
+                    throw new IllegalArgumentException ("Expression Invalide");
             }
         }while(true);
     }
 
     public static void DisplayInventoryCommand() {
         InventoryViewer inventoryViewer = new InventoryInteractor(new FileItemsRepository());
-        for (Item item : inventoryViewer.GetInventory()) {
+        for (Item item : inventoryViewer.GetInventoryViewer()) {
             System.out.println(item.toString());
         }
     }

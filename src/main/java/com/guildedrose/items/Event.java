@@ -2,8 +2,8 @@ package com.guildedrose.items;
 
 public class Event extends Item {
 
-    public Event(int id, String nom, int sellin, int quality, int price) {
-        super(id, nom, sellin, quality, price);
+    public Event(int id, String name, int sellin, int quality, int price) {
+        super(id, name, sellin, quality, price);
     }
 
     @Override
