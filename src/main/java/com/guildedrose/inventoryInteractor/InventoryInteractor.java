@@ -26,6 +26,11 @@ public class InventoryInteractor implements InventoryUpdater, InventoryViewer {
 
     @Override
     public ArrayList<Item> GetInventoryByQuantity() {
-        return null;
+        ArrayList<Item> items = this.inventoryRepository.GetInventoryRepository();
+        Item itemtmp = null;
+        for (Item item:items) {
+            //if (items[i] === item.getClass());
+        }
+        return items;
     }
 }
