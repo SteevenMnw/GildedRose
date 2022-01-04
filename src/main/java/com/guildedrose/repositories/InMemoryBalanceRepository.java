@@ -5,8 +5,8 @@ import com.guildedrose.shop.BalanceRepository;
 public class InMemoryBalanceRepository implements BalanceRepository {
     int balance;
 
-    public InMemoryBalanceRepository(){
-        this.balance = 1000000;
+    public InMemoryBalanceRepository(int balance){
+        this.balance = balance;
     }
 
 
