@@ -1,7 +1,6 @@
 package com.guildedrose.repositories;
 
 import com.guildedrose.inventoryInteractor.InventoryRepository;
-import com.guildedrose.items.Item;
 import com.guildedrose.items.*;
 import java.io.*;
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ public class FileItemsRepository implements InventoryRepository {
 
     @Override
     public ArrayList<Item> GetInventoryRepository() {
-        String line = "";
+        String line;
         try {
             BufferedReader read = new BufferedReader(new FileReader("inventory.txt"));
             while((line = read.readLine()) != null){

@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 public class ShopInteractor implements ShopBuyItem, ShopSellItem{
 
-    private InventoryRepository inventoryRepository;
-    private BalanceRepository balanceRepository;
+    private final InventoryRepository inventoryRepository;
+    private final BalanceRepository balanceRepository;
 
     public ShopInteractor(InventoryRepository inventoryRepository, BalanceRepository balanceRepository){
         this.inventoryRepository = inventoryRepository;

@@ -2,16 +2,10 @@ package com.guildedrose.balance;
 
 import com.guildedrose.items.*;
 import com.guildedrose.repositories.InMemoryBalanceRepository;
-import com.guildedrose.shop.BalanceRepository;
-import com.guildedrose.shop.ShopInteractor;
 import org.junit.jupiter.api.*;
-import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BalanceTest {
-
-    BalanceRepository balanceRepository;
-    BalanceInteractor balance = new BalanceInteractor(balanceRepository);
 
     Item[] items = new Item[]{
             new Aged("Dexterity Vest", 10, 20, 450),

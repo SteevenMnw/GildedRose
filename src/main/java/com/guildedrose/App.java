@@ -5,15 +5,13 @@ import com.guildedrose.inventoryInteractor.*;
 import com.guildedrose.items.*;
 import com.guildedrose.repositories.*;
 import com.guildedrose.shop.*;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class App {
 
     public static void main(String[] args) {
 
-        String choice = "";
-        ArrayList<Item> items = new ArrayList<>();
+        String choice;
         Scanner input = new Scanner(System.in);
         Scanner inputString = new Scanner(System.in);
         Scanner sc = new Scanner(System.in);

@@ -1,9 +1,7 @@
 package com.guildedrose.repositories;
 
 import com.guildedrose.inventoryInteractor.InventoryRepository;
-import com.guildedrose.items.Item;
 import com.guildedrose.items.*;
-
 import java.util.ArrayList;
 
 public class InMemoryRepository implements InventoryRepository {
