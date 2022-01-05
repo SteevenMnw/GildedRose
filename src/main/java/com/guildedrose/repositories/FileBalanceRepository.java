@@ -4,6 +4,7 @@ import com.guildedrose.shop.BalanceRepository;
 import java.io.*;
 
 public class FileBalanceRepository implements BalanceRepository {
+
     @Override
     public int GetBalance() {
         String line = "";

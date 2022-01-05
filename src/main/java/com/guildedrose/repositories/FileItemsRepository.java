@@ -33,6 +33,9 @@ public class FileItemsRepository implements InventoryRepository {
                     case "Legendary":
                         items.add(new Legendary(Integer.parseInt(item[0]),item[2], Integer.parseInt(item[3]), Integer.parseInt(item[4]), Integer.parseInt(item[5])));
                         break;
+                    case "Relic":
+                        items.add(new Relic(Integer.parseInt(item[0]), item[2], Integer.parseInt(item[3]), Integer.parseInt(item[4]), Integer.parseInt(item[5])));
+                        break;
                 }
             }
         } catch (Exception e) {

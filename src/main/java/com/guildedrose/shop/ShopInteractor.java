@@ -68,4 +68,10 @@ public class ShopInteractor implements ShopBuyItem, ShopSellItem{
         }
         return item;
     }
+
+    public void AddRelicPrice(Item relic) {
+        int balance = balanceRepository.GetBalance();
+        double newBalance = balance + (relic.getQuality()/1000) * relic.getPrice();
+        balanceRepository.SaveBalance((int) Math.floor(newBalance));
+    }
 }

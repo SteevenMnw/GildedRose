@@ -87,7 +87,7 @@ public class App {
                     System.out.println("===== Solde du magasin =====");
                     DisplayBalanceCommand();
                     System.out.println();
-
+                    break;
                 default :
                     throw new IllegalArgumentException ("Expression Invalide");
             }

@@ -4,7 +4,7 @@ import com.guildedrose.shop.BalanceRepository;
 
 public class BalanceInteractor implements BalanceViewer{
 
-    private BalanceRepository balanceRepository;
+    BalanceRepository balanceRepository;
 
     public BalanceInteractor(BalanceRepository balanceRepository) {
         this.balanceRepository = balanceRepository;
@@ -14,4 +14,6 @@ public class BalanceInteractor implements BalanceViewer{
     public int getBalance() {
         return balanceRepository.GetBalance();
     }
+
+
 }

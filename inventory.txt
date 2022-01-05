@@ -1,6 +1,7 @@
-1,Aged,Aged Brie,-2,12,10
-2,Event,Backstage passes,3,17,20
-3,Generic,Item normal,0,1,5
-4,Aged,Aged Brie,14,3,1
-5,Legendary,Legenday Sword,20,50,1000
-6,Generic,TestGeneric,10,3,20
+1,Aged,Aged Brie,-20,30,10
+2,Event,Backstage passes,-15,0,20
+3,Generic,Item normal,-18,0,5
+4,Aged,Aged Brie,-4,21,1
+5,Legendary,Legenday Sword,2,80,1000
+6,Generic,TestGeneric,-8,0,20
+0,Relic,LANO,0,82,65
