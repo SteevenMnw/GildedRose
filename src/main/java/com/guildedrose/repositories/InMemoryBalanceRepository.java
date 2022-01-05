@@ -9,7 +9,6 @@ public class InMemoryBalanceRepository implements BalanceRepository {
         this.balance = balance;
     }
 
-
     @Override
     public int GetBalance() {
         return balance;

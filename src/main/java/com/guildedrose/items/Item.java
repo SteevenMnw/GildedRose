@@ -1,6 +1,15 @@
 package com.guildedrose.items;
 
+import com.guildedrose.repositories.InMemoryBalanceRepository;
+import com.guildedrose.shop.BalanceRepository;
+
 public abstract class Item {
+
+    public Item(String name, int quality, int price) {
+        this.name = name;
+        this.quality = quality;
+        this.price = price;
+    }
 
     public Item(String name, int sellin, int quality, int price) {
         this.name = name;
