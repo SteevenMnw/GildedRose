@@ -1,11 +1,11 @@
 package com.guildedrose.repositories;
 
-import com.guildedrose.inventoryInteractor.InventoryRepository;
+import com.guildedrose.inventoryInteractor.ItemsRepository;
 import com.guildedrose.items.*;
 import java.io.*;
 import java.util.ArrayList;
 
-public class FileItemsRepository implements InventoryRepository {
+public class FileItemsRepository implements ItemsRepository {
 
     ArrayList<Item> items = new ArrayList<>();
     public FileItemsRepository(){}

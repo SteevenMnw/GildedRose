@@ -1,27 +1,17 @@
 package com.guildedrose.balance;
 
 import com.guildedrose.items.*;
-import com.guildedrose.repositories.InMemoryBalanceRepository;
+import com.guildedrose.repositories.*;
+import com.guildedrose.shop.ShopInteractor;
 import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.ArrayList;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BalanceTest {
 
-    Item[] items = new Item[]{
-            new Aged("Dexterity Vest", 10, 20, 450),
-            new Aged("Aged Brie", 2, 0, 20),
-            new Event("Elixir of the Mongoose", 5, 7, 150),
-            new Legendary("Sulfuras, Hand of Ragnaros", 0, 80, 1000),
-            new Legendary("Sulfuras, Hand of Ragnaros", -1, 80, 1500),
-            new Conjured("Backstage passes to a TAFKAL80ETC concert", 15, 20, 150),
-            new Generic("Backstage passes to a TAFKAL80ETC concert", 10, 49, 120),
-            new Generic("Backstage passes to a TAFKAL80ETC concert", 5, 49, 70),
-            new Conjured("Conjured Mana Cake", 3, 6, 15)
-    };
-
-    Item itemToBuy = new Aged("Peluche", 20, 25, 100);
-
-    InMemoryBalanceRepository inMemoryBalanceRepository = new InMemoryBalanceRepository(1000000);
+    ShopInteractor shopInteractor = new ShopInteractor(new InMemoryItemsRepository(), new InMemoryBalanceRepository(100000));
+    InMemoryBalanceRepository inMemoryBalanceRepository = new InMemoryBalanceRepository(100000);
+    ArrayList<Item> items = shopInteractor.GetInventoryRepository();
 
     @Test
     public void testGetBalance() {
@@ -30,12 +20,25 @@ public class BalanceTest {
 
     @Test
     public void testSaveBalance() {
-        items = new Item[]{
-                itemToBuy
-        };
+        inMemoryBalanceRepository.SaveBalance(50000);
+        assertEquals(50000, inMemoryBalanceRepository.GetBalance());
+    }
 
-        inMemoryBalanceRepository.SaveBalance(inMemoryBalanceRepository.GetBalance()-itemToBuy.getPrice());
+    @Test
+    public void testSellItemFromInventory() {
+        //Aged Item - id:1,name:"Aged Item",sellIn:15,quality:7,price:8000
+        shopInteractor.SellItemFromInventory(1);
+        assertEquals(108000, shopInteractor.GetBalance());
+        assertFalse(shopInteractor.GetInventoryRepository().contains(new Aged(1, "Aged Item", 15, 7, 8000)));
+    }
 
-        assertEquals(999900, inMemoryBalanceRepository.GetBalance());
+    @Test
+    public void testBuyItemFromInventory() {
+        shopInteractor.BuyItemFromInventory("Event", "Gold Crown", 18, 30, 1500);
+        assertEquals(999500, shopInteractor.GetBalance());
+        assertEquals(items.get(items.size() - 1).getName(), "Gold Crown");
+        assertEquals(items.get(items.size() - 1).getSellin(), 18);
+        assertEquals(items.get(items.size() - 1).getQuality(), 30);
+        assertEquals(items.get(items.size() - 1).getPrice(), 1500);
     }
 }

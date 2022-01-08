@@ -1,31 +1,32 @@
 package com.guildedrose.shop;
 
-import com.guildedrose.inventoryInteractor.InventoryRepository;
+import com.guildedrose.inventoryInteractor.ItemsRepository;
 import com.guildedrose.items.*;
 import java.util.ArrayList;
 
-public class ShopInteractor implements ShopBuyItem, ShopSellItem{
+public class ShopInteractor implements ShopBuyItem, ShopSellItem, ItemsRepository, BalanceRepository{
 
-    private final InventoryRepository inventoryRepository;
+    private final ItemsRepository itemsRepository;
     private final BalanceRepository balanceRepository;
 
-    public ShopInteractor(InventoryRepository inventoryRepository, BalanceRepository balanceRepository){
-        this.inventoryRepository = inventoryRepository;
+    public ShopInteractor(ItemsRepository itemsRepository, BalanceRepository balanceRepository){
+        super();
+        this.itemsRepository = itemsRepository;
         this.balanceRepository = balanceRepository;
     }
 
     @Override
     public void BuyItemFromInventory(String typeItem, String name, int sellin, int quality, int price) {
-        ArrayList<Item> items = inventoryRepository.GetInventoryRepository();
+        ArrayList<Item> items = itemsRepository.GetInventoryRepository();
         Item item = createItem(items,typeItem,name,sellin,quality,price);
         items.add(item);
-        inventoryRepository.SaveInventoryRepository(items);
+        itemsRepository.SaveInventoryRepository(items);
         balanceRepository.SaveBalance(balanceRepository.GetBalance() - item.getPrice());
     }
 
     @Override
     public void SellItemFromInventory(int index) {
-        ArrayList<Item> items = inventoryRepository.GetInventoryRepository();
+        ArrayList<Item> items = itemsRepository.GetInventoryRepository();
         int balance = balanceRepository.GetBalance();
         for (Item item: items){
             if (item.getId() == index){
@@ -34,7 +35,7 @@ public class ShopInteractor implements ShopBuyItem, ShopSellItem{
         }
         items.removeIf(item -> item.getId() == index);
         balanceRepository.SaveBalance(balance);
-        inventoryRepository.SaveInventoryRepository(items);
+        itemsRepository.SaveInventoryRepository(items);
 
     }
     public int getMaxIndex(ArrayList<Item> items){
@@ -73,5 +74,25 @@ public class ShopInteractor implements ShopBuyItem, ShopSellItem{
         int balance = balanceRepository.GetBalance();
         double newBalance = balance + (relic.getQuality()/1000) * relic.getPrice();
         balanceRepository.SaveBalance((int) Math.floor(newBalance));
+    }
+
+    @Override
+    public ArrayList<Item> GetInventoryRepository() {
+        return itemsRepository.GetInventoryRepository();
+    }
+
+    @Override
+    public void SaveInventoryRepository(ArrayList<Item> items) {
+        itemsRepository.SaveInventoryRepository(items);
+    }
+
+    @Override
+    public int GetBalance() {
+        return balanceRepository.GetBalance();
+    }
+
+    @Override
+    public void SaveBalance(int balance) {
+        balanceRepository.SaveBalance(balance);
     }
 }

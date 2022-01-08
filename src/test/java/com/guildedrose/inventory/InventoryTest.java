@@ -1,7 +1,7 @@
 package com.guildedrose.inventory;
 
 import com.guildedrose.items.*;
-import com.guildedrose.repositories.InMemoryRepository;
+import com.guildedrose.repositories.InMemoryItemsRepository;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class InventoryTest {
 
     ArrayList<Item> items = new ArrayList<>();
-    InMemoryRepository inMemoryRepository = new InMemoryRepository();
+    InMemoryItemsRepository inMemoryItemsRepository = new InMemoryItemsRepository();
 
 
     @Test
@@ -21,6 +21,6 @@ public class InventoryTest {
         items.add(new Generic(4,"Item normal",15,33, 10000));
         items.add(new Event(5,"Backstage passes",23,4,15000));
 
-        assertEquals(items, inMemoryRepository.GetInventoryRepository());
+        assertEquals(items, inMemoryItemsRepository.GetInventoryRepository());
     }
 }
