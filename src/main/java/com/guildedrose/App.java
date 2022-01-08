@@ -5,11 +5,14 @@ import com.guildedrose.inventoryInteractor.*;
 import com.guildedrose.items.*;
 import com.guildedrose.repositories.*;
 import com.guildedrose.shop.*;
+
+import java.io.IOException;
 import java.util.*;
+import java.util.stream.Stream;
 
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         String choice;
         Scanner input = new Scanner(System.in);
@@ -104,6 +107,8 @@ public class App {
     public static void DisplayInventoryByCountCommand() {
         InventoryViewer inventoryViewer = new InventoryInteractor(new FileItemsRepository());
         inventoryViewer.getInventoryByQuantity();
+        Stream<Map.Entry<String, Long>> itemsSorted = inventoryViewer.getInventoryByQuantity();
+        itemsSorted.forEach((i) -> System.out.println("\tItem : " + i.getKey() + " | Quantity : "+ i.getValue()));
     }
 
     public static void UpdateInventoryCommand() {

@@ -15,7 +15,7 @@ public class BalanceTest {
 
     @Test
     public void testGetBalance() {
-        assertEquals(1000000, inMemoryBalanceRepository.GetBalance());
+        assertEquals(100000, inMemoryBalanceRepository.GetBalance());
     }
 
     @Test
@@ -35,7 +35,7 @@ public class BalanceTest {
     @Test
     public void testBuyItemFromInventory() {
         shopInteractor.BuyItemFromInventory("Event", "Gold Crown", 18, 30, 1500);
-        assertEquals(999500, shopInteractor.GetBalance());
+        assertEquals(98500, shopInteractor.GetBalance());
         assertEquals(items.get(items.size() - 1).getName(), "Gold Crown");
         assertEquals(items.get(items.size() - 1).getSellin(), 18);
         assertEquals(items.get(items.size() - 1).getQuality(), 30);

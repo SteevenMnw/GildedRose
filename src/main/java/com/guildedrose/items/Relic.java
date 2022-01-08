@@ -6,16 +6,14 @@ public class Relic extends Item{
     
     FileBalanceRepository fileBalanceRepository = new FileBalanceRepository();
     
-    public Relic(int id, String name, int sellIn, int quality, int price) {
-        super(id, name, sellIn, quality, price);
+    public Relic(int id, String name, double quality, int price) {
+        super(id, name, quality, price);
     }
 
     @Override
     public void update() {
-        this.quality += (this.quality*5)/100;
-        if (this.quality >= 100) {
-            this.quality = 100;
-        }
+        this.quality += (double)(this.quality*5)/100;
+        CellQualityToHundred();
         AddRelicPriceToBalance();
     }
     public void AddRelicPriceToBalance() {

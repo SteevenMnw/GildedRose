@@ -23,7 +23,7 @@ public class Event extends Item {
         if(this.quality < 48 && this.sellin <= 5 && this.sellin > 0){
             this.quality += 3;
         }
-        if (this.sellin == 0){
+        if (this.sellin <= 0){
             this.quality = 0;
         }
 

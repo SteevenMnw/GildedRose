@@ -38,10 +38,10 @@ public class GuildedRoseTest {
 
     @Test
     void testSellInAndQualityLegendayItem() {
-        Legendary sulfuras = new Legendary("Sulfuras", 10, 15, 15);
+        Legendary sulfuras = new Legendary("Sulfuras", 10, 80, 15);
         sulfuras.update();
         assertEquals(10, sulfuras.getSellin());
-        assertEquals(15, sulfuras.getQuality());
+        assertEquals(80, sulfuras.getQuality());
     }
 
     @Test
@@ -92,14 +92,14 @@ public class GuildedRoseTest {
 
     @Test
     void testQualityRelic() {
-        Relic relic = new Relic(7, "Relic", 10, 50, 15000);
+        Relic relic = new Relic(7, "Relic", 10, 50);
         relic.update();
         assertEquals(10.5, relic.getQuality());
     }
 
     @Test
     void testQualityRelicOver100() {
-        Relic relic = new Relic(7, "Relic", 99, 50, 15000);
+        Relic relic = new Relic(7, "Relic", 99, 50);
         relic.update();
         assertEquals(100, relic.getQuality());
     }

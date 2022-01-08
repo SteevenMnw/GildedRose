@@ -2,6 +2,12 @@ package com.guildedrose.items;
 
 public abstract class Item {
 
+    protected int id;
+    protected String name;
+    protected int sellin;
+    protected double quality;
+    protected int price;
+
     public Item(String name, int sellin, int quality, int price) {
         this.name = name;
         this.sellin = sellin;
@@ -17,11 +23,12 @@ public abstract class Item {
         this.price = price;
     }
 
-    protected int id;
-    protected String name;
-    protected int sellin;
-    protected int quality;
-    protected int price;
+    public Item (int id, String name, double quality, int price){
+        this.id = id;
+        this.name = name;
+        this.quality = quality;
+        this.price = price;
+    }
 
     public int getId() {
         return id;
@@ -42,6 +49,12 @@ public abstract class Item {
     protected void CellQualityToFifty(){
         if(this.quality >= 50){
             this.quality = 50;
+        }
+    }
+
+    protected void CellQualityToHundred(){
+        if(this.quality >= 100){
+            this.quality = 100;
         }
     }
 
@@ -69,7 +82,7 @@ public abstract class Item {
         this.sellin = sellin;
     }
 
-    public int getQuality() {
+    public double getQuality() {
         return quality;
     }
 
