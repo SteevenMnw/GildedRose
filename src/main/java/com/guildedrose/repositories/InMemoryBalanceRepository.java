@@ -3,19 +3,19 @@ package com.guildedrose.repositories;
 import com.guildedrose.shop.BalanceRepository;
 
 public class InMemoryBalanceRepository implements BalanceRepository {
-    int balance;
+    double balance;
 
-    public InMemoryBalanceRepository(int balance){
-        this.balance = balance;
+    public InMemoryBalanceRepository(double balance){
+        this.balance = 100000.00;
     }
 
     @Override
-    public int GetBalance() {
+    public double GetBalance() {
         return balance;
     }
 
     @Override
-    public void SaveBalance(int balance) {
+    public void SaveBalance(double balance) {
         this.balance = balance;
     }
 }

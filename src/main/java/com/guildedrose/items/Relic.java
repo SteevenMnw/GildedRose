@@ -12,13 +12,14 @@ public class Relic extends Item{
 
     @Override
     public void update() {
-        this.quality += (double)(this.quality*5)/100;
-        CellQualityToHundred();
+        this.quality += (this.quality*5)/100;
+        this.CellQualityToHundred();
         AddRelicPriceToBalance();
     }
+
     public void AddRelicPriceToBalance() {
-        int balance = fileBalanceRepository.GetBalance();
-        double newBalance = ((double)this.getQuality() / 1000) * this.getPrice();
-        fileBalanceRepository.SaveBalance(balance + (int) Math.floor(newBalance));
+        double balance = fileBalanceRepository.GetBalance();
+        double newBalance = (this.getQuality() / 1000) * this.getPrice();
+        fileBalanceRepository.SaveBalance(balance + Math.floor(newBalance));
     }
 }

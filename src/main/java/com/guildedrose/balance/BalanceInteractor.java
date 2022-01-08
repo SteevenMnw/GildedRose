@@ -11,7 +11,7 @@ public class BalanceInteractor implements BalanceViewer{
     }
 
     @Override
-    public int getBalance() {
+    public double getBalance() {
         return balanceRepository.GetBalance();
     }
 

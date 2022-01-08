@@ -34,7 +34,7 @@ public class FileItemsRepository implements ItemsRepository {
                         items.add(new Legendary(Integer.parseInt(item[0]),item[2], Integer.parseInt(item[3]), Integer.parseInt(item[4]), Integer.parseInt(item[5])));
                         break;
                     case "Relic":
-                        items.add(new Relic(Integer.parseInt(item[0]), item[2], Integer.parseInt(item[4]), Integer.parseInt(item[5])));
+                        items.add(new Relic(Integer.parseInt(item[0]), item[2], Double.parseDouble(item[4]), Integer.parseInt(item[5])));
                         break;
                 }
             }
@@ -49,7 +49,7 @@ public class FileItemsRepository implements ItemsRepository {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("inventory.txt"));
             for (Item item: items){
-                writer.write(String.format("%d,%s,%s,%d,%d,%d",item.getId(), item.getClass().getSimpleName(), item.getName(), item.getSellin(), item.getQuality(), item.getPrice()));
+                writer.write(String.format("%d,%s,%s,%d,%2f,%d",item.getId(), item.getClass().getSimpleName(), item.getName(), item.getSellin(), item.getQuality(), item.getPrice()));
                 writer.newLine();
             }
             writer.close();

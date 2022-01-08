@@ -27,7 +27,7 @@ public class ShopInteractor implements ShopBuyItem, ShopSellItem, ItemsRepositor
     @Override
     public void SellItemFromInventory(int index) {
         ArrayList<Item> items = itemsRepository.GetInventoryRepository();
-        int balance = balanceRepository.GetBalance();
+        double balance = balanceRepository.GetBalance();
         for (Item item: items){
             if (item.getId() == index){
                 balance += item.getPrice();
@@ -66,14 +66,11 @@ public class ShopInteractor implements ShopBuyItem, ShopSellItem, ItemsRepositor
             case "Conjured":
                 item = new Conjured(getMaxIndex(items) + 1, name, sellin, quality, price);
                 break;
+            case "Relic":
+                item = new Relic(getMaxIndex(items)+1, name, quality, price);
+                break;
         }
         return item;
-    }
-
-    public void AddRelicPrice(Item relic) {
-        int balance = balanceRepository.GetBalance();
-        double newBalance = balance + (relic.getQuality()/1000) * relic.getPrice();
-        balanceRepository.SaveBalance((int) Math.floor(newBalance));
     }
 
     @Override
@@ -87,12 +84,12 @@ public class ShopInteractor implements ShopBuyItem, ShopSellItem, ItemsRepositor
     }
 
     @Override
-    public int GetBalance() {
+    public double GetBalance() {
         return balanceRepository.GetBalance();
     }
 
     @Override
-    public void SaveBalance(int balance) {
+    public void SaveBalance(double balance) {
         balanceRepository.SaveBalance(balance);
     }
 }
