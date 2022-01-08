@@ -96,19 +96,19 @@ public class App {
 
     public static void DisplayInventoryCommand() {
         InventoryViewer inventoryViewer = new InventoryInteractor(new FileItemsRepository());
-        for (Item item : inventoryViewer.GetInventoryViewer()) {
+        for (Item item : inventoryViewer.GetInventory()) {
             System.out.println(item.toString());
         }
     }
 
     public static void DisplayInventoryByCountCommand() {
         InventoryViewer inventoryViewer = new InventoryInteractor(new FileItemsRepository());
-        inventoryViewer.GetInventoryByQuantity();
+        inventoryViewer.getInventoryByQuantity();
     }
 
     public static void UpdateInventoryCommand() {
         InventoryUpdater inventoryUpdater = new InventoryInteractor(new FileItemsRepository());
-        inventoryUpdater.UpdateQuality();
+        inventoryUpdater.UpdateInventory();
         System.out.println("=== Informations mise à jour ===");
     }
 

@@ -14,6 +14,15 @@ public class InMemoryItemsRepository implements ItemsRepository {
         items.add(new Legendary(3,"Sulfuras",0,10, 1000));
         items.add(new Generic(4,"Item normal",15,33, 10000));
         items.add(new Event(5,"Backstage passes",23,4,15000));
+        items.add(new Aged(6,"Aged Item",15,7, 8000));
+        items.add(new Event(7,"Backstage passes",23,4,15000));
+        items.add(new Conjured(8,"Conjured Item",8,22, 5000));
+        items.add(new Legendary(9,"Sulfuras",0,10, 1000));
+        items.add(new Aged(10,"Aged Item",15,7, 8000));
+        items.add(new Event(11,"Backstage passes",23,4,15000));
+        items.add(new Event(12,"Backstage passes",23,4,15000));
+        items.add(new Legendary(13,"Sulfuras",0,10, 1000));
+        items.add(new Relic(14,"La canne", 0, 80, 10000));
     }
 
     @Override

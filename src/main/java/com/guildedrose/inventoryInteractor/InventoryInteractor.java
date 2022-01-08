@@ -2,6 +2,10 @@ package com.guildedrose.inventoryInteractor;
 
 import com.guildedrose.items.Item;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class InventoryInteractor implements InventoryUpdater, InventoryViewer {
     private ItemsRepository itemsRepository;
@@ -11,7 +15,7 @@ public class InventoryInteractor implements InventoryUpdater, InventoryViewer {
     }
 
     @Override
-    public void UpdateQuality() {
+    public void UpdateInventory() {
         ArrayList<Item> items = this.itemsRepository.GetInventoryRepository();
         for(Item item : items){
             item.update();
@@ -20,17 +24,21 @@ public class InventoryInteractor implements InventoryUpdater, InventoryViewer {
     }
 
     @Override
-    public ArrayList<Item> GetInventoryViewer() {
+    public ArrayList<Item> GetInventory() {
         return itemsRepository.GetInventoryRepository();
     }
 
     @Override
-    public ArrayList<Item> GetInventoryByQuantity() {
-        ArrayList<Item> items = this.itemsRepository.GetInventoryRepository();
-        Item itemtmp = null;
-        for (Item item:items) {
-            //if (items[i] === item.getClass());
-        }
-        return items;
+    public Stream<Map.Entry<String, Long>> getInventoryByQuantity() {
+        ArrayList<Item> items = itemsRepository.GetInventoryRepository();
+        Stream<Map.Entry<String, Long>> itemsSorted = items.stream().collect(Collectors.groupingBy(Item::getName, Collectors.counting())).entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()));
+        return itemsSorted;
     }
+
+    @Override
+    public void SaveInventory(ArrayList<Item> items) {
+        itemsRepository.SaveInventoryRepository(items);
+    }
+
+
 }
