@@ -26,7 +26,6 @@ public class BalanceTest {
 
     @Test
     public void testSellItemFromInventory() {
-        //Aged Item - id:1,name:"Aged Item",sellIn:15,quality:7,price:8000
         shopInteractor.SellItemFromInventory(1);
         assertEquals(108000, shopInteractor.GetBalance());
         assertFalse(shopInteractor.GetInventoryRepository().contains(new Aged(1, "Aged Item", 15, 7, 8000)));
